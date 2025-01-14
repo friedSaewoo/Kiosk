@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Menu {
     private final String category;
-    List<MenuItem> menuList;
+    private final List<MenuItem> menuList;
     
     // 카테고리를 매개변수로 받고, List는 초기화만 해주는 생성자, List는 메서드로 추가
     public Menu(String category) {
