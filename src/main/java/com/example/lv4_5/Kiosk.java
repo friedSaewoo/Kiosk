@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Kiosk {
     private final List<Menu> menu;
+    private final Scanner sc = new Scanner(System.in);
 
     public Kiosk() {
         this.menu = new ArrayList<>();
@@ -70,7 +71,6 @@ public class Kiosk {
     
     // 정수를 입력받는 메서드
     private int inputInteger() {
-        Scanner sc = new Scanner(System.in);
         int input;
         while (true) {
             try {
