@@ -1,6 +1,6 @@
-package com.example.lv3;
+package com.example.lv4_5;
 
-public  class MenuItem {
+public class MenuItem {
     private final String menuName;
     private final String menuPrice;
     private final String menuInfo;
