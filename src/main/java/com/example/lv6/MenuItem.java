@@ -1,4 +1,4 @@
-package com.example.lv4_5;
+package com.example.lv6;
 
 public class MenuItem {
     private final String menuName;

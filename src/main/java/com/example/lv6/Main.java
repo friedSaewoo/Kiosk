@@ -1,4 +1,5 @@
-package com.example.lv4_5;
+package com.example.lv6;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -22,6 +23,5 @@ public class Main {
         kiosk.addMenu("Desserts", new MenuItem("Apple Pie", 3.5, "따뜻한 애플 파이"));
 
         kiosk.start();
-
     }
 }

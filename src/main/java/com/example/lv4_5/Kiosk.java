@@ -28,7 +28,7 @@ public class Kiosk {
         while (true) {
             showCategory(); // 카테고리 출력
             int categoryOption = inputInteger();
-
+            // 올바른 카테고리를 입력할때까지 반복
             if (categoryOption == 0) {
                 System.out.println("키오스크를 종료합니다.");
                 break;
@@ -36,6 +36,7 @@ public class Kiosk {
                 System.out.println();
                 System.out.println("\n올바른 선택지를 입력하세요!!\n");
             }else{
+                // 올바른 메뉴를 입력할때까지 반복
                 while (true) {
                     menu.get(categoryOption - 1).showMenuList();
                     int menuOption = inputInteger();
