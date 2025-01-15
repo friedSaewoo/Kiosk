@@ -43,13 +43,13 @@ public class Cart {
         System.out.println("1. 주문      2. 메뉴판");
         while (true) {
             int cartOption = inputInteger();
-            if(cartOption == 1){
-                System.out.printf("주문이 완료되었습니다. 금액은 w %.1f 입니다.\n",sumPrice);
+            if (cartOption == 1) {
+                System.out.printf("주문이 완료되었습니다. 금액은 w %.1f 입니다.\n", sumPrice);
                 cleanCart();
                 break;
             } else if (cartOption == 2) {
                 break;
-            }else{
+            } else {
                 System.out.println("\n올바른 선택지를 입력하세요!!\n");
             }
         }
@@ -66,7 +66,8 @@ public class Cart {
     public void cleanCart() {
         cartItemList.clear();
     }
-    public boolean cartIsEmpty(){
+
+    public boolean cartIsEmpty() {
         return cartItemList.isEmpty();
     }
 }
