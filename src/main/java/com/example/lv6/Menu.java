@@ -1,4 +1,4 @@
-package com.example.lv4_5;
+package com.example.lv6;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,8 @@ public class Menu {
 
     // 카테고리별 메뉴 리스트 출력
     public void showMenuList() {
-        System.out.println("[ SHAKESHACK MENU ]");
+        System.out.println("\n[ SHAKESHACK MENU ]");
+
         for (int i = 0; i < menuList.size(); i++) {
             System.out.print(i + 1 + ". ");
             System.out.printf("%-15s", menuList.get(i).getMenuName());
@@ -43,11 +44,10 @@ public class Menu {
             String name = menuList.get(menu-1).getMenuName();
             double price = menuList.get(menu - 1).getMenuPrice();
             String info = menuList.get(menu - 1).getMenuInfo();
-            System.out.println("\n***************************************");
-            System.out.println("메뉴 명 :" + name);
-            System.out.println("가격 :" + price);
-            System.out.println("정보 :" + info);
-            System.out.println("***************************************\n");
+            System.out.println("\n[ Orders ]");
+            System.out.printf("%-15s", name);
+            System.out.printf("| w %-5s| ", price);
+            System.out.println(info);
         } catch (IndexOutOfBoundsException ioe) {
             System.out.println("\n올바른 선택지를 입력하세요!!\n");
         }
