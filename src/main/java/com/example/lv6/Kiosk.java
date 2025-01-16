@@ -10,7 +10,6 @@ public class Kiosk {
     private final List<Menu> menu;
     private final Cart cart = new Cart();
     private boolean cartInMenu = false;
-
     public Kiosk() {
         this.menu = new ArrayList<>();
         constructMenu();
