@@ -91,6 +91,7 @@ public class Cart {
         while(true){
             int discountOption = inputInteger();
             if(discountOption>discount.length){
+
                 System.out.println("\n올바른 선택지를 입력하세요!!\n");
             }else{
                 return discount[discountOption-1].getDiscountRate();
