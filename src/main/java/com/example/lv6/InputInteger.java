@@ -6,6 +6,7 @@ public class InputInteger {
     static Scanner sc = new Scanner(System.in);
     public static int inputInteger() {
         int input;
+
         while (true) {
             try {
                 System.out.print("입력 : ");
