@@ -28,7 +28,6 @@ public class Menu {
     // 카테고리별 메뉴 리스트 출력
     public void showMenuList() {
         System.out.println("\n[ SHAKESHACK MENU ]");
-
         for (int i = 0; i < menuList.size(); i++) {
             System.out.print(i + 1 + ". ");
             System.out.printf("%-15s", menuList.get(i).getMenuName());
