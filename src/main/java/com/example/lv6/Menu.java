@@ -2,6 +2,7 @@ package com.example.lv6;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Menu {
     private final String category;
@@ -28,12 +29,15 @@ public class Menu {
     // 카테고리별 메뉴 리스트 출력
     public void showMenuList() {
         System.out.println("\n[ SHAKESHACK MENU ]");
-        for (int i = 0; i < menuList.size(); i++) {
-            System.out.print(i + 1 + ". ");
-            System.out.printf("%-15s", menuList.get(i).getMenuName());
-            System.out.printf("| w %-5s| ", menuList.get(i).getMenuPrice());
-            System.out.println(menuList.get(i).getMenuInfo());
-        }
+        IntStream.range(0, menuList.size())
+                .forEach(i -> {
+                    MenuItem menuItem = menuList.get(i);
+                    System.out.printf("%d. %-15s| w %-5s| %s\n",
+                            i + 1,
+                            menuItem.getMenuName(),
+                            menuItem.getMenuPrice(),
+                            menuItem.getMenuInfo());
+                });
         System.out.println("0. 뒤로가기");
     }
 
