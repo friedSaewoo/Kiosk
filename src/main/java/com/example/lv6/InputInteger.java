@@ -1,7 +1,7 @@
 package com.example.lv6;
 
 import java.util.Scanner;
-
+// 정수를 입력받는 메서드, Static으로 선언해 객체선언없이 바로 사용
 public class InputInteger {
     static Scanner sc = new Scanner(System.in);
     public static int inputInteger() {
