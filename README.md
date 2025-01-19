@@ -152,6 +152,30 @@ w 10.9
 올바른 선택지를 입력하세요!!
 </code></pre>
 - Enum을 사용해 사용자 유형별 할인율 관리
+> Discount
+<pre><code>
+ public enum Discount {
+    Patriot(10,"국가유공자"),
+    Soldier(5,"군인"),
+    Student(3,"학생"),
+    General(0,"일반인");
+
+    private final int discountRate;
+    private final String name;
+    Discount(int discountRate, String name) {
+        this.discountRate = discountRate;
+        this.name= name;
+    }
+
+    public int getDiscountRate() {
+        return discountRate;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+</code></pre>
 - 람다 & 스트림을 활용해 장바구니 조회기능, 장바구니 삭제기능 구현
 > 출력
 <pre><code>
