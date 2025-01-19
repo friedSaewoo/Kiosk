@@ -1,5 +1,5 @@
 package com.example.lv6;
-
+// 할인율 관리
 public enum Discount {
     Patriot(10,"국가유공자"),
     Soldier(5,"군인"),

@@ -10,6 +10,7 @@ public class Kiosk {
     private final List<Menu> menu;
     private final Cart cart = new Cart();
     private boolean cartInMenu = false;
+
     public Kiosk() {
         this.menu = new ArrayList<>();
         constructMenu();
@@ -49,7 +50,8 @@ public class Kiosk {
         }
     }
 
-    private void handleCategorySelection(int categoryOption){
+    // 장바구니가 비었는지 여부에 따라 선택지를 출력해주는 메서드
+    private void handleCategorySelection(int categoryOption) {
         if ((categoryOption == 4 || categoryOption == 5) && cartInMenu) {
 
             if (categoryOption == 4) {
@@ -59,14 +61,13 @@ public class Kiosk {
                 cart.cleanCart();
                 cartInMenu = false;
             }
-
         } else if (categoryOption > menu.size()) {
             System.out.println("\n올바른 선택지를 입력하세요!!\n");
         } else {
             handleMenuSelection(categoryOption);
         }
     }
-
+    // 메뉴 관리 메서드
     private void handleMenuSelection(int categoryOption) {
         // 올바른 메뉴를 입력할때까지 반복
         while (true) {
@@ -83,7 +84,7 @@ public class Kiosk {
             }
         }
     }
-
+    // 선택한 메뉴 구매 메서드
     private void buyMenu(int categoryOption, int menuOption) {
         menu.get(categoryOption - 1).showMenuInfo(menuOption);
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");

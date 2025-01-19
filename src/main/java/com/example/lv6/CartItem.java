@@ -16,6 +16,7 @@ public class CartItem {
     public int getQuantity() {
         return quantity;
     }
+    // 장바구니 수량 증가
     public void addQuantity(){
         quantity++;
     }

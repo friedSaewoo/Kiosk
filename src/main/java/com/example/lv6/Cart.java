@@ -20,19 +20,19 @@ public class Cart {
     public List<CartItem> getCartItemList() {
         return cartItemList;
     }
-
+    // 선택한 메뉴를 장바구니에 추가하는 메서드
     public void addMenuToCart(MenuItem menuItem) {
+        // 선택한 메뉴가 장바구니에 이미 있으면 수량 증가, 없을시 객체를 새로 생성해 장바구니에 추가
         Optional<CartItem> cartItemOptional = cartItemList.stream()
                 .filter(item -> item.getMenuItem().equals(menuItem))
                 .findFirst();
-
         if (cartItemOptional.isPresent()) {
             cartItemOptional.get().addQuantity();
         } else {
             cartItemList.add(new CartItem(menuItem));
         }
     }
-
+    // 장바구니 내역 출력 메서드
     public void showCart() {
         System.out.println("\n[ Orders ]");
         for (CartItem cartItem : cartItemList) {
@@ -46,7 +46,7 @@ public class Cart {
         System.out.printf("w %.1f \n\n", sumPrice);
         buyItemsFromCart();
     }
-
+    // 장바구니의 아이템을 구매하는 메서드
     private void buyItemsFromCart(){
         while (true) {
             System.out.println("1. 주문      2. 메뉴판      3. 메뉴삭제");
@@ -67,7 +67,7 @@ public class Cart {
             }
         }
     }
-
+    // 장바구니 아이템 삭제 메서드
     private void deleteFromCart(){
         System.out.print("장바구니에서 삭제할 메뉴입력 : ");
         String deleteMenu = sc.nextLine();
@@ -82,7 +82,7 @@ public class Cart {
             System.out.println("\n장바구니에 해당 메뉴가 없습니다.");
         }
     }
-
+    // 할인율을 받아오는 메서드
     private int selectDiscount(){
         System.out.println("\n할인정보를 입력해주세요");
         for(int i=0 ; i<discount.length;i++){
@@ -99,6 +99,7 @@ public class Cart {
         }
 
     }
+    // 장바구니 총액 반환하는 메서드
     private double sumPrice() {
         double sum = 0.0;
         for (CartItem cartItem : cartItemList) {
@@ -106,11 +107,11 @@ public class Cart {
         }
         return sum;
     }
-
+    // 장바구니 초기화 메서드
     public void cleanCart() {
         cartItemList.clear();
     }
-
+    // 장바구니 비었는지 확인하는 메서드
     public boolean cartIsEmpty() {
         return cartItemList.isEmpty();
     }
